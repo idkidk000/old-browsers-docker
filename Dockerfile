@@ -6,7 +6,7 @@ RUN useradd -d /home/user -m user
 COPY --chmod=755 <<EOT /entrypoint.sh
 #!/usr/bin/env sh
 firefox http://localhost:3000 &
-chromium-browser http://localhost:3000 &
+chromium-browser --no-sandbox http://localhost:3000 &
 exec bash
 EOT
 ENTRYPOINT ["/entrypoint.sh"]
