@@ -13,6 +13,7 @@ docker run \
   --rm \
   --net=host \
   --shm-size=1gb \
-  -it "$IMAGE_NAME"
+  -it "$IMAGE_NAME" \
+  "$@"
 # remove permission
 xhost -local:docker
